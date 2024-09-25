@@ -1,10 +1,10 @@
 const Home = () => {
   return (
     <div>
-      <h2>Device Hub</h2>
-      <p>this is home</p>
+      <h1 className="h1-home">Device Hub</h1>
 
-      {/* Your layout content here */}
+
+      {/* Your Home content here */}
     </div>
   );
 };
