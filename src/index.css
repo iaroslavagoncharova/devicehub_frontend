@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,13 +16,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --purple: #5459EA;
+  --purple: #5459ea;
   --background: #101010;
   --light-text: #9fa2b4;
-  --dark-text: #192A3E;
-  --title-text: #2E3A59;
+  --dark-text: #192a3e;
+  --title-text: #2e3a59;
   --white: #ffffff;
   --red: #ef4444;
+}
+
+.background-login {
+  background-image: url("./assets/placeholderImage.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 a {
@@ -27,17 +37,15 @@ a {
   text-decoration: inherit;
 }
 
-
 body {
   margin: 0;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-
-button {
+/* button {
   border-radius: 15px;
   border: 1px solid transparent;
   padding: 0.01em 3em;
@@ -57,4 +65,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
