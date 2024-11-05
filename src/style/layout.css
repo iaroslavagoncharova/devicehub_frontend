@@ -37,8 +37,6 @@ header {
     display: none;
   }
 
-
-
 svg{
   margin-left: -45px;
   margin-bottom: -4px;
@@ -91,10 +89,10 @@ svg{
 }
 
 
-/*navbar icons*/
+/*navbar icons
 .top-nav{
   position: absolute;
-  /*margin-left: 275px;*/
+  margin-left: 275px;
   left: 39vh;
   top: -3.3vh;
 }
@@ -104,6 +102,7 @@ svg{
   left: 39vh;
   bottom: -2.7vh;
 }
+*/
 
 /* Main page */
 .mainpage {
@@ -138,4 +137,38 @@ svg{
     margin-top: -100px;
     margin-left: -60px;
 }
+
+/* Navbar icons */
+
+.top-nav, .bottom-nav {
+  position: absolute;
+  left: 18.6vw; /* Set to a percentage or vw for responsive positioning */
+}
+
+/* Adjust top and bottom values using percentages or rems */
+.top-nav {
+  top: -1.49rem; /* Responsive positioning, using rem instead of vh */
+}
+
+.bottom-nav {
+  bottom: -1.25rem; /* Responsive positioning, using rem instead of vh */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+  .top-nav, .bottom-nav {
+    left: 18.7; /* Adjust for smaller screens */
+  }
+
+  .top-nav {
+    top: 1rem;
+  }
+
+  .bottom-nav {
+    bottom: 1rem;
+  }
+}
+
+
+
   

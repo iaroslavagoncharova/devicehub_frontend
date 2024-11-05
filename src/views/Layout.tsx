@@ -127,7 +127,7 @@ const Layout = () => {
               <li className="navi navi-overview">
               <p 
                 className={
-                  /^\/devices\/name\/[^\/]+$/.test(location.pathname)  // Ensure this pattern matches correctly
+                /^\/devices\/name\/[^\/]+$/.test(location.pathname)  // Ensure this pattern matches correctly
                     ? "navi-p-active navi-p-icon-DO" 
                     : ""
                 }
