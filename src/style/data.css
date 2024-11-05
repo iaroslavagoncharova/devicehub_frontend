@@ -1,10 +1,10 @@
 @import url('../index.css');
 
 .device-hub-container {
-    font-family: Arial, sans-serif;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
   }
   
   .header {
@@ -23,13 +23,15 @@
     justify-content: space-between;
     gap: 20px;
   }
-  
+
   .left-section {
-    flex: 3;
+    flex: 2;
   }
   
   .right-section {
-    flex: 1;
+    flex: 2;
+    align-self: flex-start;
+    margin-top: 5rem;
   }
   
   .left-section h2 {
@@ -39,35 +41,29 @@
   }
   
   /* Styling for LeftPanel (Stat + Management) */
-  .statistic, .management-section {
-    background-color: var(--white);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .statistic h3, .management-section h3 {
-    margin-bottom: 15px;
-    font-size: 1.25rem;
-  }
-  
-  .statistic {
-    min-height: 200px;
-  }
-  
-  .management-section {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .statistic {
     position: relative;
     background-color: var(--white);
     padding: 20px;
+    padding-top: 0;
+    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     min-height: 200px;
+  }
+  
+  .statistic h3 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+  }
+  
+  .chart-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   .statistic-header {
@@ -84,8 +80,9 @@
     background-color: var(--white);
     color: var(--dark-text);
     cursor: pointer;
+    font: inherit;
   }
-  
+
   /* Styling for RightPanel (Info section) */
   .info-section, .additional-info {
     background-color: var(--white);
@@ -101,6 +98,7 @@
   .info-section h3 {
     margin-bottom: 10px;
     font-size: 1.25rem;
+    text-align: center;
   }
   
   .info-section ul {
@@ -110,66 +108,15 @@
   
   .info-section li {
     margin: 5px 0;
+    border:  1px solid #EFF0F4;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   .info-section li span {
     font-weight: bold;
   }
-  
-  /* Additional info styling */
-  .additional-info {
-    margin-top: 20px;
-  }
-  
-  .additional-info h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-  }
-  
-  /* Chart or graph placeholder */
-  .chart {
-    margin-top: 20px;
-    height: 100px;
-    background-color: var(--white);
-    border-radius: 5px;
-}
-
-.management-section {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-}
-
-.management-button, .close-button {
-    padding: 10px 40px; 
-    font-size: 1.25rem; 
-    border-radius: 5px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.management-button {
-    background-color: var(--white);
-    color: var(--purple); 
-    border: 2px solid var(--purple); 
-}
-
-.management-button:hover {
-    background-color: var(--purple);
-    color: var(--white);
-}
-
-.close-button {
-    background-color: var(--white);
-    color: var(--red); 
-    border: 2px solid var(--red); 
-}
-
-.close-button:hover {
-    background-color: var(--red);
-    color: var(--white);
-}
   
   /* Responsive Design */
   @media (max-width: 1200px) {
@@ -215,12 +162,12 @@
       padding: 10px;
     }
   
-    .statistic, .management-section, .right-panel {
+    .statistic, .right-panel {
       padding: 10px;
       margin-bottom: 10px;
     }
   
-    .statistic h3, .management-section h3, .info-section h3, .additional-info h3 {
+    .statistic h3, .info-section h3, .additional-info h3 {
       font-size: 1rem;
     }
   }

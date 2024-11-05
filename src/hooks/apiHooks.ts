@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Values } from "../types/LocalTypes";
-import { DBMessageResponse, MessageResponse } from "../types/MessageTypes";
+import { DBMessageResponse, MessageResponse, RoleResponse } from "../types/MessageTypes";
 import { Device, DeviceClass, DeviceData, Ruuvi } from "../types/DBTypes";
 
 /******************Device Hooks******************/
@@ -344,7 +344,11 @@ const useFetchRuuviTagData = () => {
         const response = await axios.get<Ruuvi[]>(
           "http://localhost:3000/api/v1/ruuvi"
         );
-        setRuuviTagData(response.data);
+        if (response.data) {
+          setRuuviTagData(response.data);
+        } else {
+          setError("No RuuviTag data found");
+        }
       } catch {
         setError("Failed to fetch RuuviTag data");
       } finally {
@@ -361,17 +365,23 @@ const useFetchRuuviTagData = () => {
 // Hook to authenticate admin
 
 const useUser = () => {
-  const getRoleByToken = async (token: string) => {
+  const getRoleByToken = async () => {
+    const token = localStorage.getItem("token");
     const options = {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     };
-    const result = await axios.get<string>(
+    const result = await axios.post<RoleResponse>(
       "http://localhost:3000/api/v1/login/role",
+      {},
       options
     );
-    return result.data;
+    if (result) {
+      return result.data.data.role;
+    } else {
+      return null;
+    }
   };
 
   const postPasswordChange = async (password: string) => {
@@ -406,7 +416,6 @@ const useAuth = () => {
         },
       }
     );
-    console.log("result", result);
     if (result) {
       return result;
     } else {

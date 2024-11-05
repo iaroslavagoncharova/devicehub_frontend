@@ -9,8 +9,6 @@
 }
 .device-h3{
     margin-left: 20px;
-    margin-top: 50px;
-
 }
 
 .device-container{
@@ -19,6 +17,7 @@
 
 .device-card{
     display: flex;
+    align-items: center;
 }
 .device-info{
     background-color: #f7f8fA;
@@ -31,9 +30,14 @@
     flex: 1; 
     padding-left: 10px;
 }
+.device-card:hover{
+    background-color: #f0f0f0;
+}
+
 .device-card p{
     flex: 2; 
     padding-left: 35px;
+    font-size: 15px;
 }
 
 /* .card-info{
@@ -49,5 +53,131 @@
     background-color: var(--purple);
     color: white;
     border: none;
-
+    text-align: center;
 }
+
+.device-button:hover{
+    background-color: #6a5acd;
+}
+
+.device-button-modify {
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--light-text);
+    color: var(--dark-text);
+    border: none;
+    text-align: center;
+}
+
+.device-button-modify:hover {
+    background-color: var(--title-text);
+    color: var(--white);
+}
+
+.device-button-delete {
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--red);
+    color: white;
+    border: none;
+    text-align: center;
+}
+
+.device-button-delete:hover {
+    background-color: #ee6969;
+}
+
+.add-device-button {
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--purple);
+    color: white;
+    border: none;
+}
+
+.add-device-button:hover{
+    background-color: #6a5acd;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+  
+  .modal-content {
+    background-color: #f7f8fA;
+    padding: 20px;
+    border-radius: 5px;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .form-field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-field select {
+    font: inherit;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+  
+  .modal-content h3 {
+    margin-top: 0;
+  }
+  
+  .modal-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:first-of-type {
+    background-color: var(--purple);
+    color: white;
+  }
+  
+  .modal-content button:last-of-type {
+    background-color: #ccc;
+  }

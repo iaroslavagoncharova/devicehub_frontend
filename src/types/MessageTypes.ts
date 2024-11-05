@@ -10,4 +10,8 @@ type DBMessageResponse = MessageResponse & {
   data: { username: string; role: string; token: string };
 };
 
-export type { MessageResponse, ErrorResponse, DBMessageResponse };
+type RoleResponse = MessageResponse & {
+  data: { role: string };
+};
+
+export type { MessageResponse, ErrorResponse, DBMessageResponse, RoleResponse };

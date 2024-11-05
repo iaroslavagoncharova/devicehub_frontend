@@ -103,6 +103,7 @@ input {
   outline: none;
   background-color: var(--white);
   color: var(--dark-text);
+  font: inherit;
 }
 
 input::placeholder {

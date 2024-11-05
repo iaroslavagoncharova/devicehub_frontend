@@ -85,6 +85,18 @@
     margin-top: 11px;
   }
 
+  .box p {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    color: var(--dark-text);
+  }
+
+  .box:hover {
+    background-color: #f7f8fA;
+  }
+
   .star1{
     background-color: #39DE54;
   }

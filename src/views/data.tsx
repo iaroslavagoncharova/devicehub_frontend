@@ -1,26 +1,38 @@
-import React from 'react';
-import '../style/data.css';
-import LeftPanel from '../components/LeftPanel';
-import RightPanel from '../components/RightPanel';
-
+import React from "react";
+import "../style/data.css";
+import LeftPanel from "../components/LeftPanel";
+import RightPanel from "../components/RightPanel";
+import { useFetchDevice } from "../hooks/apiHooks";
+import { useParams } from "react-router-dom";
 
 const Data: React.FC = () => {
+  const { deviceName } = useParams<{ deviceName: string }>();
+  const { device, loading, error } = useFetchDevice(deviceName || "");
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
+  if (!device) {
+    return;
+  }
+
   return (
-    <div className="device-hub-container">
-      <header className="header">
-        <h2>Device Hub</h2>
-      </header>
-      <div className="content">
-        <div className="left-section">
-          <h2>Device X</h2>
-          <LeftPanel />
-        </div>
-        <div className="right-section">
-          <RightPanel />
+    <div className="data-wrapper">
+      <h2 className="h2-title">Device Hub</h2>
+      <hr className="line" />
+      <div className="device-hub-container">
+        <div className="content">
+          <div className="left-section">
+            <h2>{deviceName}</h2>
+            <LeftPanel />
+          </div>
+          <div className="right-section">
+            <RightPanel device={device} />
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Data;

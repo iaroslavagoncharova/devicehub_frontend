@@ -1,5 +1,12 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat-Regular"), url("./assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -12,11 +19,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --purple: #5459EA;
+  --purple: #5459ea;
   --background: #101010;
   --light-text: #9fa2b4;
-  --dark-text: #192A3E;
-  --title-text: #2E3A59;
+  --dark-text: #192a3e;
+  --title-text: #2e3a59;
   --white: #ffffff;
   --red: #ef4444;
 }
@@ -27,15 +34,13 @@ a {
   text-decoration: inherit;
 }
 
-
 body {
   margin: 0;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  overflow: hidden; 
+  overflow: hidden;
 }
-
 
 button {
   border-radius: 15px;
@@ -49,7 +54,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   color: black;
-  
 }
 button:hover {
   border-color: var(--purple);

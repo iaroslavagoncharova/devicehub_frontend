@@ -14,12 +14,10 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
 
   const handleLogin = async (values: Values) => {
     try {
-      console.log(values);
       const result = await postLogin(values);
       if (result) {
         localStorage.setItem("token", result.data.data.token);
         setRole(result.data.data.role);
-        console.log(result.data.data.role);
       }
     } catch (error) {
       console.error((error as Error).message);
